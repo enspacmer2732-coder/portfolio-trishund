@@ -21,7 +21,7 @@ export default function Contact() {
           viewport={{ once: true, margin: '-80px' }}
           className="mb-12"
         >
-          <p className="section-number mb-3">04 / Contact</p>
+          <p className="section-number mb-3">09 / Contact</p>
           <h2 className="section-title-xl">
             Let's Build<br />The Future.
           </h2>

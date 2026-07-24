@@ -149,7 +149,7 @@ export default function Tools() {
           viewport={{ once: true, margin: '-80px' }}
           className="mb-12"
         >
-          <p className="section-number mb-3">— / What I Use</p>
+          <p className="section-number mb-3">03 / What I Use</p>
           <h2 className="section-title-xl">
             Tools &<br />Technologies.
           </h2>

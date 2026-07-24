@@ -47,7 +47,7 @@ export default function Experience() {
           viewport={{ once: true, margin: '-80px' }}
           className="mb-12"
         >
-          <p className="section-number mb-3">02 / Career Path</p>
+          <p className="section-number mb-3">04 / Career Path</p>
           <h2 className="section-title-xl">
             Experience.
           </h2>

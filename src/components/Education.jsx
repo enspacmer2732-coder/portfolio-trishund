@@ -39,12 +39,12 @@ export default function Education() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="text-center mb-14"
+          className="mb-12"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-textPrimary mb-4">
-            Education
+          <p className="section-number mb-3">08 / Education</p>
+          <h2 className="section-title-xl">
+            The<br />Foundation.
           </h2>
-          <div className="w-12 h-1 bg-accent rounded-full mx-auto" />
         </motion.div>
 
         <div className="space-y-6 max-w-3xl mx-auto">

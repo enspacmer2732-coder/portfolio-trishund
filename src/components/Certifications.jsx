@@ -75,12 +75,12 @@ export default function Certifications() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="text-center mb-14"
+          className="mb-12"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-textPrimary mb-4">
-            Certifications
+          <p className="section-number mb-3">07 / Certifications</p>
+          <h2 className="section-title-xl">
+            Proven &<br />Verified.
           </h2>
-          <div className="w-12 h-1 bg-accent rounded-full mx-auto" />
         </motion.div>
 
         <motion.div

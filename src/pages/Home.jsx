@@ -48,7 +48,7 @@ export default function Home() {
             viewport={{ once: true, margin: '-80px' }}
             className="mb-12"
           >
-            <p className="section-number mb-3">03 / Curated Innovations</p>
+            <p className="section-number mb-3">05 / Projects</p>
             <h2 className="section-title-xl">
               Curated<br />Innovations.
             </h2>

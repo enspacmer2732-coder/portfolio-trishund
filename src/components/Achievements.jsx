@@ -55,12 +55,12 @@ export default function Achievements() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="text-center mb-14"
+          className="mb-12"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-textPrimary mb-4">
-            Leadership &amp; Initiatives
+          <p className="section-number mb-3">06 / Leadership & Initiatives</p>
+          <h2 className="section-title-xl">
+            Beyond the<br />Desk.
           </h2>
-          <div className="w-12 h-1 bg-accent rounded-full mx-auto" />
         </motion.div>
 
         <motion.div
