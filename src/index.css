@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hide the native cursor only when the custom cursor is active (real mice) */
+body.has-custom-cursor,
+body.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Dot + trailing ring cursor.
+   Both are positioned via `transform` from JS every frame (never CSS-
+   transitioned): the dot is pinned 1:1 to the pointer, the ring is eased in JS
+   so it drags a hair behind. Only the ring's hover morph (size/fill) animates. */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #111111;
+  pointer-events: none;
+  z-index: 10001;
+  will-change: transform;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  border: 1px solid #111111;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 10000;
+  transition: width 0.22s ease, height 0.22s ease,
+              background-color 0.22s ease, border-color 0.22s ease;
+  will-change: transform;
+}
+.cursor-ring.is-hovering {
+  width: 46px;
+  height: 46px;
+  background-color: rgba(17, 17, 17, 0.05);
+}
+/* No animated hover morph for reduced-motion users — instant swap instead. */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring { transition: none; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #F5F5F5; }
+::-webkit-scrollbar-thumb  { background: #CCCCCC; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #999999; }
+
+/* Hero background — subtle dot grid on white */
+.hero-bg {
+  background-color: #FFFFFF;
+  background-image: radial-gradient(#00000010 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Selection highlight */
+::selection {
+  background: #11111118;
+  color: #111111;
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+/* Reusable component classes */
+@layer components {
+  .tech-badge {
+    @apply bg-surface border border-border text-textSecondary font-mono text-xs px-3 py-1 rounded-full;
+  }
+
+  .metric-chip {
+    @apply bg-success/10 border border-success text-success text-sm font-semibold px-3 py-1 rounded-md inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-black/80 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .btn-outline {
+    @apply border border-border text-textPrimary hover:bg-surface font-semibold px-6 py-3 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .card {
+    @apply bg-surface border border-border hover:border-textMuted rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .section-wrap {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .input-field {
+    @apply bg-transparent border-b border-border focus:border-textPrimary px-0 py-3 text-textPrimary placeholder-textMuted outline-none transition-colors duration-200 w-full font-body text-sm;
+  }
+
+  /* Section divider line style (like Krti Koumar portfolio) */
+  .section-number {
+    @apply text-xs font-mono text-textMuted tracking-widest uppercase;
+  }
+
+  .section-title-xl {
+    @apply font-display text-5xl md:text-7xl font-extrabold text-textPrimary leading-none tracking-tight uppercase;
+  }
+}
