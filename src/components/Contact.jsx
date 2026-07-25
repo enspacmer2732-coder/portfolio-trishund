@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, KaggleIcon } from './SocialIcons';
 
 const revealVariants = {
@@ -46,6 +46,21 @@ export default function Contact() {
                   <p className="font-body text-sm">trishundkupatkar@gmail.com</p>
                 </div>
               </div>
+              <a
+                href="https://wa.me/917000975450"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-textSecondary group"
+                aria-label="Phone and WhatsApp: +91 7000975450"
+              >
+                <div className="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center flex-shrink-0 group-hover:border-textPrimary transition-colors">
+                  <Phone size={18} className="text-textPrimary" />
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-textMuted">Phone / WhatsApp</p>
+                  <p className="font-body text-sm group-hover:text-textPrimary transition-colors">+91 7000975450</p>
+                </div>
+              </a>
               <div className="flex items-center gap-3 text-textSecondary">
                 <div className="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center flex-shrink-0">
                   <MapPin size={18} className="text-textPrimary" />
